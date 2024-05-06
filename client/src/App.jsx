@@ -9,7 +9,7 @@ const App = () => {
 
   const fetchData = () => {
     // Fetch data from backend API endpoint
-    fetch('http://localhost:5001/api/cars')
+    fetch('https://car-inventory-5yoi.onrender.com/api/cars')
       .then(response => response.json())
       .then(data => {
         setCarsData(data);
@@ -21,7 +21,7 @@ const App = () => {
 
   const handlePurchase = async (carId) => {
     try {
-      await fetch(`http://localhost:5001/api/cars/purchase/${carId}`, {
+      await fetch(`https://car-inventory-5yoi.onrender.com/api/cars/purchase/${carId}`, {
         method: 'PUT',
       });
       fetchData(); // Refresh data after purchase
@@ -32,7 +32,7 @@ const App = () => {
 
   const handleSell = async (carId) => {
     try {
-      await fetch(`http://localhost:5001/api/cars/sell/${carId}`, {
+      await fetch(`https://car-inventory-5yoi.onrender.com/api/cars/sell/${carId}`, {
         method: 'PUT',
       });
       fetchData(); // Refresh data after sell
