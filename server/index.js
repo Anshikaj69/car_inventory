@@ -5,7 +5,7 @@ const app= express()
 const PORT = 5001
 
 app.use(cors({
-    origin : `https://carinventoryanshika-anshikaj69s-projects.vercel.app`,
+    origin : `'*'`,
     methods : ['GET', 'POST', 'PUT', 'DELETE'],
 }))
 
