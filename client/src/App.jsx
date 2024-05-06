@@ -13,6 +13,7 @@ const App = () => {
       .then(response => response.json())
       .then(data => {
         setCarsData(data);
+        window.location.reload()
       })
       .catch(error => {
         console.error('Error fetching data:', error);
