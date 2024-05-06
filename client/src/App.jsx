@@ -44,7 +44,10 @@ const App = () => {
   return (
     <div className="flex justify-center items-center w-[100vw] ">
     <div className='flex flex-col gap-11 justify-center w-[90%]  my-10'>
+      <div className='gap-2'>
       <h1 className='text-center font-bold'>Car Inventory</h1>
+      <p className='text-center'> Due to limitations of live server, requests get delayed. Please refresh to see changes. (works fine on local env)</p>
+      </div>
       <table className='table-auto '>
         <thead className='border'>
           <tr className='bg-slate-300 border rounded'>
