@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 const App = () => {
   const [carsData, setCarsData] = useState([]);
+  const [forceUpdate, setForceUpdate] = useState(false);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [forceUpdate]);
 
   const fetchData = async() => {
     // Fetch data from backend API endpoint
@@ -13,6 +14,7 @@ const App = () => {
       .then(response => response.json())
       .then(data => {
         setCarsData(data);
+       
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -24,7 +26,8 @@ const App = () => {
       await fetch(`https://car-inventory-hazel.vercel.app/api/cars/purchase/${carId}`, {
         method: 'PUT',
       });
-      setTimeout(()=>{fetchData()},5000); // Refresh data after purchase
+      handleForceUpdate()
+      await fetchData() // Refresh data after purchase
     } catch (error) {
       console.error('Error purchasing car:', error);
     }
@@ -35,10 +38,16 @@ const App = () => {
       await fetch(`https://car-inventory-hazel.vercel.app/api/cars/sell/${carId}`, {
         method: 'PUT',
       });
-      setTimeout(()=>{fetchData()},5000); // Refresh data after purchase
+      await fetchData() // Refresh data after purchase
     } catch (error) {
       console.error('Error selling car:', error);
     }
+  };
+
+
+  const handleForceUpdate = () => {
+    setForceUpdate(prevState => !prevState);
+    console.log('re-rendered')
   };
 
   return (
