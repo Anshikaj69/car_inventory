@@ -24,7 +24,7 @@ const App = () => {
       await fetch(`https://car-inventory-5yoi.onrender.com/api/cars/purchase/${carId}`, {
         method: 'PUT',
       });
-      fetchData(); // Refresh data after purchase
+      setTimeout(()=>{fetchData()},5000); // Refresh data after purchase
     } catch (error) {
       console.error('Error purchasing car:', error);
     }
@@ -35,7 +35,7 @@ const App = () => {
       await fetch(`https://car-inventory-5yoi.onrender.com/api/cars/sell/${carId}`, {
         method: 'PUT',
       });
-      fetchData(); // Refresh data after sell
+      setTimeout(()=>{fetchData()},5000); // Refresh data after purchase
     } catch (error) {
       console.error('Error selling car:', error);
     }
