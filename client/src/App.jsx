@@ -7,9 +7,9 @@ const App = () => {
     fetchData();
   }, []);
 
-  const fetchData = () => {
+  const fetchData = async() => {
     // Fetch data from backend API endpoint
-    fetch('https://car-inventory-5yoi.onrender.com/api/cars')
+    await fetch('https://car-inventory-5yoi.onrender.com/api/cars')
       .then(response => response.json())
       .then(data => {
         setCarsData(data);
