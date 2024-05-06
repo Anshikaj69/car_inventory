@@ -10,7 +10,7 @@ const App = () => {
 
   const fetchData = async() => {
     // Fetch data from backend API endpoint
-    await fetch('https://car-inventory-hazel.vercel.app/api/cars')
+    await fetch('https://car-inventory-5yoi.onrender.com/api/cars')
       .then(response => response.json())
       .then(data => {
         setCarsData(data);
@@ -23,7 +23,7 @@ const App = () => {
 
   const handlePurchase = async (carId) => {
     try {
-      await fetch(`https://car-inventory-hazel.vercel.app/api/cars/purchase/${carId}`, {
+      await fetch(`https://car-inventory-5yoi.onrender.com/api/cars/purchase/${carId}`, {
         method: 'PUT',
       });
       handleForceUpdate()
@@ -35,7 +35,7 @@ const App = () => {
 
   const handleSell = async (carId) => {
     try {
-      await fetch(`https://car-inventory-hazel.vercel.app/api/cars/sell/${carId}`, {
+      await fetch(`https://car-inventory-5yoi.onrender.com/api/cars/sell/${carId}`, {
         method: 'PUT',
       });
       await fetchData() // Refresh data after purchase
