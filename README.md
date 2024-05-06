@@ -3,7 +3,7 @@ CAR Inventory tracking (due to limitation of free hosting, requests get deplayed
 ![image](https://github.com/Anshikaj69/car_inventory/assets/94690313/1e05cf2c-754f-4c9d-b758-9affd8a06cd0)
 
 Tech stack -
-Node js, \n
+Node js, /n
 react js
 Mysql
 Tailwindcss
